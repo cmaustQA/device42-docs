@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./footer.module.css";
 import clsx from "clsx";
-import Icon from "@site/src/components/icon";
+import Icon from "/src/components/icon";
 import Link from '@docusaurus/Link';
 
 
