@@ -19,3 +19,6 @@ jobs:
 
       - name: Run Cypress Component Tests
         run: yarn cypress run --component
+
+      - name: Run Cypress End-to-End Tests
+        run: yarn cypress run --e2e
