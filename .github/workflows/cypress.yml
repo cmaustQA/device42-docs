@@ -17,11 +17,6 @@ jobs:
       - name: Install Dependencies
         run: yarn install
 
-      - name: Start server
-        run: yarn start &
-        env:
-          CI: true
-
       - name: Run Cypress Component Tests
         uses: cypress-io/github-action@v2
         with:
