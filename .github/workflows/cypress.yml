@@ -17,8 +17,21 @@ jobs:
       - name: Install Dependencies
         run: yarn install
 
+      - name: Start server
+        run: yarn start &
+        env:
+          CI: true
+
       - name: Run Cypress Component Tests
-        run: yarn cypress run --component
+        uses: cypress-io/github-action@v2
+        with:
+          start: yarn start
+          wait-on: 'http://localhost:3000'
+          command: yarn cypress run --component
 
       - name: Run Cypress End-to-End Tests
-        run: yarn cypress run --e2e
+        uses: cypress-io/github-action@v2
+        with:
+          start: yarn start
+          wait-on: 'http://localhost:3000'
+          command: yarn cypress run --e2e
